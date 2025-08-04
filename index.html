@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broken Arrow & South Tulsa Radiator - Expert Auto Repair</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .phone {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .phone:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .hours {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .services {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .reservation-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .reservation-form {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .gallery {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .reviews {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .reviewer {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 15px;
+        }
+
+        .show-more {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .location {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                text-align: center;
+            }
+
+            .contact-info {
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .phone {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <div class="logo">Broken Arrow & South Tulsa Radiator</div>
+                <div>Expert Auto Repair Since 1995</div>
+            </div>
+            <div class="contact-info">
+                <a href="tel:9182580921" class="phone">📞 (918) 258-0921</a>
+                <div class="hours">
+                    Mon-Fri: 8:30 AM - 5 PM<br>
+                    Sat: 10 AM - 2 PM • Sun: Closed
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Tulsa's Trusted Auto Repair Experts</h1>
+        <p>Over 25 years of honest, reliable service. From radiators to exhaust systems, we get you back on the road fast with fair pricing and quality workmanship.</p>
+        <div class="cta-buttons">
+            <a href="#reservation" class="btn btn-primary">Book Appointment</a>
+            <a href="tel:9182580921" class="btn btn-secondary">Call Now</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Exhaust Systems</h3>
+                    <p>Complete exhaust repair, muffler replacement, and custom exhaust installations. Quick turnaround with quality parts.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌡️</div>
+                    <h3>Radiator Repair</h3>
+                    <p>Radiator replacement, coolant system flushes, and leak repairs. Keep your engine running cool.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Catalytic Converters</h3>
+                    <p>Catalytic converter replacement and repair. Fair pricing with quality parts that last.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>General Repairs</h3>
+                    <p>Oil changes, inspections, and general automotive repairs. One-stop shop for all your vehicle needs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔥</div>
+                    <h3>Welding Services</h3>
+                    <p>Expert welding and fabrication. Custom work and repairs done right the first time.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3>Performance Upgrades</h3>
+                    <p>Custom exhaust systems and performance modifications. Make your vehicle sound and perform better.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservation" class="reservation-section">
+        <div class="container">
+            <h2 class="section-title">Book Your Appointment</h2>
+            <div class="reservation-form">
+                <p style="margin-bottom: 30px;">Schedule your service appointment online. We'll confirm your booking within 24 hours.</p>
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle (Year, Make, Model)</label>
+                        <input type="text" id="vehicle" name="vehicle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="oil-change">Oil Change</option>
+                            <option value="exhaust">Exhaust Repair/Replacement</option>
+                            <option value="radiator">Radiator Service</option>
+                            <option value="inspection">Vehicle Inspection</option>
+                            <option value="catalytic">Catalytic Converter</option>
+                            <option value="general">General Repair</option>
+                            <option value="other">Other (describe below)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred-date">Preferred Date</label>
+                        <input type="date" id="preferred-date" name="preferred-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred-time">Preferred Time</label>
+                        <select id="preferred-time" name="preferred-time" required>
+                            <option value="">Select time</option>
+                            <option value="morning">Morning (8:30-11:30 AM)</option>
+                            <option value="midday">Midday (11:30 AM-2:30 PM)</option>
+                            <option value="afternoon">Afternoon (2:30-5:00 PM)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Describe the issue or any specific requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Schedule Appointment</button>
+                </form>
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                    Prefer to call? <a href="tel:9182580921" style="color: #ffd700;">Call (918) 258-0921</a> to speak with us directly.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Shop & Work</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/South-Tulsa-Radiator/main/Tulsaradiatorjoe1.png" alt="Shop Front" onerror="this.src='https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/South-Tulsa-Radiator/main/Tulsaradiatorjoe2.png" alt="Shop Interior" onerror="this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/South-Tulsa-Radiator/main/Tulsaradiatorjoe3.png" alt="Repair Work" onerror="this.src='https://images.unsplash.com/photo-1615906655593-ad0386982a0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item hidden" id="gallery4">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/South-Tulsa-Radiator/main/Tulsaradiatorjoe4.png" alt="Equipment" onerror="this.src='https://images.unsplash.com/photo-1632823469621-700faba35a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item hidden" id="gallery5">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/South-Tulsa-Radiator/main/Tulsaradiatorjoe5.png" alt="Team at Work" onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item hidden" id="gallery6">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/South-Tulsa-Radiator/main/Tulsaradiatorjoe6.png" alt="Quality Work" onerror="this.src='https://images.unsplash.com/photo-1593526492054-c57b632bed22?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item hidden" id="gallery7">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/South-Tulsa-Radiator/main/Tulsaradiatorjoe7.png" alt="Satisfied Customers" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+            </div>
+            <div class="show-more">
+                <button class="btn btn-primary" onclick="showMoreGallery()">Show More Photos</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Been doing business with them for over 20 years. Very good at their job and always fair on the price. We have sent several people their way with a good job done."</p>
+                    <div class="reviewer">- Kelvin Dodson</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Mr. Sanders was very kind and respectful. Dropped it off and he fixed my vehicle right up and made it way more pleasurable to drive. Cost was very reasonable!"</p>
+                    <div class="reviewer">- Braden Townsell</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Robin, you're impressive! The price was lower than quoted, and the swift completion earned a prompt callback. Quality work!"</p>
+                    <div class="reviewer">- James McGill</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"We have had Robin do work for us for 25 years!! He does excellent work and very reasonable! I refer everyone I know to him!!"</p>
+                    <div class="reviewer">- Tami Deffenbaugh</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"I have been using Robin at BA muffler for nearly 13yrs. Quality of work is always excellent, he's always been able to get me in and out in a timely manner!"</p>
+                    <div class="reviewer">- Tyler Maxwell</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Robin did a great job on the dual exhaust on my truck. Quality work, I recommend anybody who wants exhaust on their vehicle."</p>
+                    <div class="reviewer">- Rob Durland</div>
+                </div>
+                
+                <!-- Hidden reviews -->
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Awesome work, got my muffler and resonator delete done in less than half an hour, sounded amazing and great price. Would recommend."</p>
+                    <div class="reviewer">- Nehemiah</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"My experience was great from start to finish. I scheduled an appointment the night before they had my car finished 6 hours sooner than expected!"</p>
+                    <div class="reviewer">- Jake Chaney</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Had a catalytic converter come apart, took it in this morning and Robin called me in about 2 hours and said it was ready. Very fair price and great work!"</p>
+                    <div class="reviewer">- Michael Jackson</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Robin was awesome to deal with. His work is awesome and so are his prices. The dealership I worked at only used him."</p>
+                    <div class="reviewer">- Lucas Harbolt</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Price is always fair, work is good and consistent and he's always able to get it done in a timely manner."</p>
+                    <div class="reviewer">- Tour Quality Golf</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Robin done an amazing job on my Truck. New muffler and Tips today and It looks great. Very good on prices and I will definitely return."</p>
+                    <div class="reviewer">- Kevin L.</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"This place is fantastic. Not only did he give me a price up front and stuck to it without hidden fees, he also got it done in way less time than estimated."</p>
+                    <div class="reviewer">- James Nold</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Hands down the best muffler/radiator shop in all of Oklahoma! Awesome customer service. Great prices, great people. Highly recommended."</p>
+                    <div class="reviewer">- Brian O'Connor</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"100% Satisfied. I was told it was most likely the flex pipe and the quote was $200. After online research I found that this was an extremely competitive price."</p>
+                    <div class="reviewer">- Marty Castens</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐</div>
+                    <p>"Prefacing my visit with a three star today because he comes highly recommend from buddies. After my court is out I'll give this man an honest review and a good one I'm sure!"</p>
+                    <div class="reviewer">- Jacob Rudolph</div>
+                </div>
+            </div>
+            <div class="show-more">
+                <button class="btn btn-primary" onclick="showMoreReviews()">Show More Reviews</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="location">
+        <div class="container">
+            <h2 class="section-title">Visit Our Shop</h2>
+            <div class="location-content">
+                <div>
+                    <h3>Easy to Find Location</h3>
+                    <p><strong>Address:</strong><br>213 W Kenosha St<br>Broken Arrow, OK 74012</p>
+                    
+                    <p><strong>Phone:</strong><br><a href="tel:9182580921" style="color: #2c3e50; text-decoration: none; font-weight: bold;">(918) 258-0921</a></p>
+                    
+                    <p><strong>Hours:</strong><br>
+                    Monday - Friday: 8:30 AM - 5:00 PM<br>
+                    Saturday: 10:00 AM - 2:00 PM<br>
+                    Sunday: Closed</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <a href="https://www.google.com/maps/place/Broken+Arrow+%26+South+Tulsa+Radiator/@36.0609689,-95.7925365,17z/data=!4m16!1m9!3m8!1s0x87b68bbfd20335f7:0x2004d5a42ad1cc3e!2sBroken+Arrow+%26+South+Tulsa+Radiator!8m2!3d36.0607059!4d-95.7925324!9m1!1b1!16s%2Fg%2F1tdps56f!3m5!1s0x87b68bbfd20335f7:0x2004d5a42ad1cc3e!8m2!3d36.0607059!4d-95.7925324!16s%2Fg%2F1tdps56f?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary">Get Directions</a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3248.8076857750544!2d-95.79253658485205!3d36.060705880068986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b68bbfd20335f7%3A0x2004d5a42ad1cc3e!2sBroken%20Arrow%20%26%20South%20Tulsa%20Radiator!5e0!3m2!1sen!2sus!4v1635789012345!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Broken Arrow & South Tulsa Radiator. All rights reserved.</p>
+            <p>Expert auto repair serving Tulsa, Broken Arrow, and surrounding areas since 1995.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Create mailto link with appointment details
+            const subject = encodeURIComponent('Appointment Request - ' + data.service);
+            const body = encodeURIComponent(
+                `New appointment request:
+                
+Name: ${data.name}
+Phone: ${data.phone}
+Email: ${data.email}
+Vehicle: ${data.vehicle}
+Service: ${data.service}
+Preferred Date: ${data['preferred-date']}
+Preferred Time: ${data['preferred-time']}
+Additional Details: ${data.message}
+
+Please contact me to confirm this appointment.`
+            );
+            
+            // Try to integrate with Square Appointments if available
+            // For now, we'll use a combination of email and Square checkout
+            
+            // Option 1: Direct Square Appointments integration (if you have Square Appointments set up)
+            // Replace 'YOUR_SQUARE_APPLICATION_ID' with your actual Square Application ID
+            const squareAppointmentsUrl = 'https://squareup.com/appointments/book/YOUR_LOCATION_ID';
+            
+            // Option 2: Use Square's payment processing for service booking
+            // This creates a structured way to handle appointments
+            
+            alert('Thank you for your appointment request! We will contact you within 24 hours to confirm your booking. For immediate assistance, please call (918) 258-0921.');
+            
+            // Send email notification
+            window.location.href = `mailto:appointments@brokenarrrowradiator.com?subject=${subject}&body=${body}`;
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Show more reviews functionality
+        function showMoreReviews() {
+            const hiddenReviews = document.querySelectorAll('.review-more');
+            const button = event.target;
+            
+            if (button.textContent === 'Show More Reviews') {
+                hiddenReviews.forEach(review => {
+                    review.classList.remove('hidden');
+                });
+                button.textContent = 'Show Less Reviews';
+            } else {
+                hiddenReviews.forEach(review => {
+                    review.classList.add('hidden');
+                });
+                button.textContent = 'Show More Reviews';
+            }
+        }
+
+        // Show more gallery functionality
+        function showMoreGallery() {
+            const hiddenItems = document.querySelectorAll('#gallery4, #gallery5, #gallery6, #gallery7');
+            const button = event.target;
+            
+            if (button.textContent === 'Show More Photos') {
+                hiddenItems.forEach(item => {
+                    item.classList.remove('hidden');
+                });
+                button.textContent = 'Show Less Photos';
+            } else {
+                hiddenItems.forEach(item => {
+                    item.classList.add('hidden');
+                });
+                button.textContent = 'Show More Photos';
+            }
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Set minimum date for appointment booking (today)
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('preferred-date');
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+        });
+
+        // Newsletter signup and service reminders
+        function setupServiceReminders() {
+            // This would integrate with your email marketing system
+            // For example, Mailchimp, Constant Contact, or Square Marketing
+            
+            const reminderSystem = {
+                oilChange: 90, // days
+                inspection: 365, // days
+                tireRotation: 180 // days
+            };
+            
+            // Store customer preferences for service reminders
+            function subscribeToReminders(email, services) {
+                // Integration with email marketing platform
+                console.log('Subscribing', email, 'to reminders for:', services);
+            }
+        }
+
+        // Call tracking for mobile users
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Track phone calls for analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'phone_call', {
+                        event_category: 'engagement',
+                        event_label: 'header_phone'
+                    });
+                }
+            });
+        });
+
+        // Add loading state to appointment form
+        document.getElementById('appointmentForm').addEventListener('submit', function() {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Scheduling...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+    </script>
+
+    <!-- Square Web Payments SDK (for future payment integration) -->
+    <script type="text/javascript" src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+    
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
+</body>
+</html>
