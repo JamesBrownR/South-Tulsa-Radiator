@@ -139,11 +139,15 @@
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1e3c72;
-        }
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1e3c72;
+}
+
+.newsletter .section-title {
+    color: white;
+}
 
         .services-grid {
             display: grid;
@@ -337,13 +341,13 @@
             font-size: 0.9rem;
         }
 
-        #mce-success-response {
+        .success-message {
             background: rgba(40, 167, 69, 0.2);
             color: #28a745;
             border: 1px solid rgba(40, 167, 69, 0.3);
         }
 
-        #mce-error-response {
+        .error-message {
             background: rgba(220, 53, 69, 0.2);
             color: #dc3545;
             border: 1px solid rgba(220, 53, 69, 0.3);
@@ -434,206 +438,6 @@
                     Sat: 10 AM - 2 PM • Sun: Closed
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="location">
-        <div class="container">
-            <h2 class="section-title">Visit Our Shop</h2>
-            <div class="location-content">
-                <div>
-                    <h3>Easy to Find Location</h3>
-                    <p><strong>Address:</strong><br>213 W Kenosha St<br>Broken Arrow, OK 74012</p>
-                    
-                    <p><strong>Phone:</strong><br><a href="tel:9182580921" style="color: #1e3c72; text-decoration: none; font-weight: bold;">(918) 258-0921</a></p>
-                    
-                    <p><strong>Hours:</strong><br>
-                    Monday - Friday: 8:30 AM - 5:00 PM<br>
-                    Saturday: 10:00 AM - 2:00 PM<br>
-                    Sunday: Closed</p>
-                    
-                    <div style="margin-top: 30px;">
-                        <a href="https://www.google.com/maps/place/Broken+Arrow+%26+South+Tulsa+Radiator/@36.0609689,-95.7925365,17z/data=!4m16!1m9!3m8!1s0x87b68bbfd20335f7:0x2004d5a42ad1cc3e!2sBroken+Arrow+%26+South+Tulsa+Radiator!8m2!3d36.0607059!4d-95.7925324!9m1!1b1!16s%2Fg%2F1tdps56f!3m5!1s0x87b68bbfd20335f7:0x2004d5a42ad1cc3e!8m2!3d36.0607059!4d-95.7925324!16s%2Fg%2F1tdps56f?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary">Get Directions</a>
-                    </div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3248.8076857750544!2d-95.79253658485205!3d36.060705880068986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b68bbfd20335f7%3A0x2004d5a42ad1cc3e!2sBroken%20Arrow%20%26%20South%20Tulsa%20Radiator!5e0!3m2!1sen!2sus!4v1635789012345!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Broken Arrow & South Tulsa Radiator. All rights reserved.</p>
-            <p>Expert auto repair serving Tulsa, Broken Arrow, and surrounding areas since 1995.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Form submission handler
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Create mailto link with appointment details
-            const subject = encodeURIComponent('Appointment Request - ' + data.service);
-            const body = encodeURIComponent(
-                `New appointment request:
-                
-Name: ${data.name}
-Phone: ${data.phone}
-Email: ${data.email}
-Vehicle: ${data.vehicle}
-Service: ${data.service}
-Preferred Date: ${data['preferred-date']}
-Preferred Time: ${data['preferred-time']}
-Additional Details: ${data.message}
-
-Please contact me to confirm this appointment.`
-            );
-            
-            alert('Thank you for your appointment request! We will contact you within 24 hours to confirm your booking. For immediate assistance, please call (918) 258-0921.');
-            
-            // Send email notification
-            window.location.href = `mailto:appointments@brokenarrrowradiator.com?subject=${subject}&body=${body}`;
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Show more reviews functionality
-        function showMoreReviews() {
-            const hiddenReviews = document.querySelectorAll('.review-more');
-            const button = event.target;
-            
-            if (button.textContent === 'Show More Reviews') {
-                hiddenReviews.forEach(review => {
-                    review.classList.remove('hidden');
-                });
-                button.textContent = 'Show Less Reviews';
-            } else {
-                hiddenReviews.forEach(review => {
-                    review.classList.add('hidden');
-                });
-                button.textContent = 'Show More Reviews';
-            }
-        }
-
-        // Show more gallery functionality
-        function showMoreGallery() {
-            const hiddenItems = document.querySelectorAll('#gallery4, #gallery5, #gallery6, #gallery7');
-            const button = event.target;
-            
-            if (button.textContent === 'Show More Photos') {
-                hiddenItems.forEach(item => {
-                    item.classList.remove('hidden');
-                });
-                button.textContent = 'Show Less Photos';
-            } else {
-                hiddenItems.forEach(item => {
-                    item.classList.add('hidden');
-                });
-                button.textContent = 'Show More Photos';
-            }
-        }
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Set minimum date for appointment booking (today)
-        document.addEventListener('DOMContentLoaded', function() {
-            const dateInput = document.getElementById('preferred-date');
-            const today = new Date();
-            const tomorrow = new Date(today);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            dateInput.min = tomorrow.toISOString().split('T')[0];
-        });
-
-        // Call tracking for mobile users
-        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            link.addEventListener('click', function() {
-                // Track phone calls for analytics
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'phone_call', {
-                        event_category: 'engagement',
-                        event_label: 'header_phone'
-                    });
-                }
-            });
-        });
-
-        // Add loading state to appointment form
-        document.getElementById('appointmentForm').addEventListener('submit', function() {
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Scheduling...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 3000);
-        });
-    </script>
-
-    <!-- Mailchimp Newsletter Script -->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
-        (function($) {
-            window.fnames = new Array(); 
-            window.ftypes = new Array();
-            fnames[0]='EMAIL';ftypes[0]='email';
-            fnames[1]='FNAME';ftypes[1]='text';
-            fnames[2]='LNAME';ftypes[2]='text';
-            fnames[3]='ADDRESS';ftypes[3]='address';
-            fnames[4]='PHONE';ftypes[4]='phone';
-            fnames[5]='BIRTHDAY';ftypes[5]='birthday';
-            fnames[6]='COMPANY';ftypes[6]='text';
-        }(jQuery));
-        var $mcj = jQuery.noConflict(true);
-        
-        // Custom newsletter form handling
-        document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
-            const submitBtn = document.getElementById('mc-embedded-subscribe');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Subscribing...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 3000);
-        });
-    </script>
-
-    <!-- Square Web Payments SDK (for future payment integration) -->
-    <script type="text/javascript" src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
-    
-    <!-- Google Analytics (replace with your tracking ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_TRACKING_ID');
-    </script>
-</body>
-</html>
         </div>
     </header>
 
@@ -843,26 +647,6 @@ Please contact me to confirm this appointment.`
                     <p>"Robin done an amazing job on my Truck. New muffler and Tips today and It looks great. Very good on prices and I will definitely return."</p>
                     <div class="reviewer">- Kevin L.</div>
                 </div>
-                <div class="review-card hidden review-more">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"This place is fantastic. Not only did he give me a price up front and stuck to it without hidden fees, he also got it done in way less time than estimated."</p>
-                    <div class="reviewer">- James Nold</div>
-                </div>
-                <div class="review-card hidden review-more">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Hands down the best muffler/radiator shop in all of Oklahoma! Awesome customer service. Great prices, great people. Highly recommended."</p>
-                    <div class="reviewer">- Brian O'Connor</div>
-                </div>
-                <div class="review-card hidden review-more">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"100% Satisfied. I was told it was most likely the flex pipe and the quote was $200. After online research I found that this was an extremely competitive price."</p>
-                    <div class="reviewer">- Marty Castens</div>
-                </div>
-                <div class="review-card hidden review-more">
-                    <div class="stars">⭐⭐</div>
-                    <p>"Prefacing my visit with a three star today because he comes highly recommend from buddies. After my court is out I'll give this man an honest review and a good one I'm sure!"</p>
-                    <div class="reviewer">- Jacob Rudolph</div>
-                </div>
             </div>
             <div class="show-more">
                 <button class="btn btn-primary" onclick="showMoreReviews()">Show More Reviews</button>
@@ -879,19 +663,183 @@ Please contact me to confirm this appointment.`
                     <p>Subscribe to receive maintenance reminders, seasonal specials, and automotive tips straight to your inbox. No spam, unsubscribe anytime.</p>
                 </div>
                 <div class="newsletter-form-container">
-                    <form action="https://gmail.us12.list-manage.com/subscribe/post?u=55b8a8dfdd77086d0dddbf347&amp;id=f0d21f4828&amp;f_id=003f80e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletter-form validate" target="_blank">
+                    <form action="https://gmail.us12.list-manage.com/subscribe/post?u=55b8a8dfdd77086d0dddbf347&amp;id=f0d21f4828&amp;f_id=003f80e3f0" method="post" id="newsletter-form" class="newsletter-form" target="_blank">
                         <div class="form-group">
-                            <input type="email" name="EMAIL" class="required email newsletter-input" id="mce-EMAIL" placeholder="Enter your email address" required>
-                            <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary newsletter-btn">Subscribe</button>
+                            <input type="email" name="EMAIL" class="newsletter-input" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary newsletter-btn">Subscribe</button>
                         </div>
-                        <div id="mce-responses" class="clear">
-                            <div class="response" id="mce-error-response" style="display: none;"></div>
-                            <div class="response" id="mce-success-response" style="display: none;"></div>
-                        </div>
-                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+                        <div id="newsletter-response" style="display: none;"></div>
+                        <!-- Honeypot field -->
                         <div style="position: absolute; left: -5000px;" aria-hidden="true">
                             <input type="text" name="b_55b8a8dfdd77086d0dddbf347_f0d21f4828" tabindex="-1" value="">
                         </div>
                     </form>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="location">
+        <div class="container">
+            <h2 class="section-title">Visit Our Shop</h2>
+            <div class="location-content">
+                <div>
+                    <h3>Easy to Find Location</h3>
+                    <p><strong>Address:</strong><br>213 W Kenosha St<br>Broken Arrow, OK 74012</p>
+                    
+                    <p><strong>Phone:</strong><br><a href="tel:9182580921" style="color: #1e3c72; text-decoration: none; font-weight: bold;">(918) 258-0921</a></p>
+                    
+                    <p><strong>Hours:</strong><br>
+                    Monday - Friday: 8:30 AM - 5:00 PM<br>
+                    Saturday: 10:00 AM - 2:00 PM<br>
+                    Sunday: Closed</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <a href="https://www.google.com/maps/place/Broken+Arrow+%26+South+Tulsa+Radiator/@36.0609689,-95.7925365,17z/data=!4m16!1m9!3m8!1s0x87b68bbfd20335f7:0x2004d5a42ad1cc3e!2sBroken+Arrow+%26+South+Tulsa+Radiator!8m2!3d36.0607059!4d-95.7925324!9m1!1b1!16s%2Fg%2F1tdps56f!3m5!1s0x87b68bbfd20335f7:0x2004d5a42ad1cc3e!8m2!3d36.0607059!4d-95.7925324!16s%2Fg%2F1tdps56f?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary">Get Directions</a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3248.8076857750544!2d-95.79253658485205!3d36.060705880068986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b68bbfd20335f7%3A0x2004d5a42ad1cc3e!2sBroken%20Arrow%20%26%20South%20Tulsa%20Radiator!5e0!3m2!1sen!2sus!4v1635789012345!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Broken Arrow & South Tulsa Radiator. All rights reserved.</p>
+            <p>Expert auto repair serving Tulsa, Broken Arrow, and surrounding areas since 1995.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Create mailto link with appointment details
+            const subject = encodeURIComponent('Appointment Request - ' + data.service);
+            const body = encodeURIComponent(
+                `New appointment request:
+                
+Name: ${data.name}
+Phone: ${data.phone}
+Email: ${data.email}
+Vehicle: ${data.vehicle}
+Service: ${data.service}
+Preferred Date: ${data['preferred-date']}
+Preferred Time: ${data['preferred-time']}
+Additional Details: ${data.message}
+
+Please contact me to confirm this appointment.`
+            );
+            
+            alert('Thank you for your appointment request! We will contact you within 24 hours to confirm your booking. For immediate assistance, please call (918) 258-0921.');
+            
+            // Send email notification
+            window.location.href = `mailto:appointments@brokenarrrowradiator.com?subject=${subject}&body=${body}`;
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Show more reviews functionality
+        function showMoreReviews() {
+            const hiddenReviews = document.querySelectorAll('.review-more');
+            const button = event.target;
+            
+            if (button.textContent === 'Show More Reviews') {
+                hiddenReviews.forEach(review => {
+                    review.classList.remove('hidden');
+                });
+                button.textContent = 'Show Less Reviews';
+            } else {
+                hiddenReviews.forEach(review => {
+                    review.classList.add('hidden');
+                });
+                button.textContent = 'Show More Reviews';
+            }
+        }
+
+        // Show more gallery functionality
+        function showMoreGallery() {
+            const hiddenItems = document.querySelectorAll('#gallery4, #gallery5, #gallery6, #gallery7');
+            const button = event.target;
+            
+            if (button.textContent === 'Show More Photos') {
+                hiddenItems.forEach(item => {
+                    item.classList.remove('hidden');
+                });
+                button.textContent = 'Show Less Photos';
+            } else {
+                hiddenItems.forEach(item => {
+                    item.classList.add('hidden');
+                });
+                button.textContent = 'Show More Photos';
+            }
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Set minimum date for appointment booking (today)
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('preferred-date');
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+        });
+
+        // Call tracking for mobile users
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Track phone calls for analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'phone_call', {
+                        event_category: 'engagement',
+                        event_label: 'header_phone'
+                    });
+                }
+            });
+        });
+
+        // Add loading state to appointment form
+        document.getElementById('appointmentForm').addEventListener('submit', function() {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Scheduling...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+    </script>
+
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
+</body>
+</html>
